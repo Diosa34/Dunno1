@@ -27,7 +27,7 @@ public class Main {
 
         if (result.getTime() > 1){
             if (result.getSmallMoney() > 1){
-                System.out.println("Никак не могут справиться, потому что слишком много мелких монет");
+                System.out.println("Никак не могут справиться, потому что слишком много мелких монет.");
             }
         }
         else {
