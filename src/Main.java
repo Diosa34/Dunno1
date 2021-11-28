@@ -12,7 +12,7 @@ public class Main {
         miga.handshake(customer);
 
         System.out.println("Мига спросил имя покупателя.");
-        System.out.println(String.format("Покупатель ответил - %s", customer.getName()));
+        System.out.println(String.format("Покупатель ответил: %s", customer.getName()));
 
         miga.moveTo(phone);
         phone.call(miga, photographer);
