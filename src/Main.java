@@ -31,7 +31,7 @@ public class Main {
             }
         }
         else {
-            System.out.println("Монетки посчитаны.");
+            System.out.println("Медные монетки посчитаны.");
         }
     }
 }
