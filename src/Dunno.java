@@ -3,7 +3,7 @@ public final class Dunno extends Character{
         private final int smallMoney;
         private final int time;
 
-        CountingResult(int smallMoney, int time){
+        public CountingResult(int smallMoney, int time){
             this.smallMoney = smallMoney;
             this.time = time;
         }
@@ -28,8 +28,9 @@ public final class Dunno extends Character{
             if (santic.getNominal() < Money.THREE_SANTIC.getNominal()) {
                 smallMoney += 1;
             }
+            time += 1;
         }
-        time += 1;
+
         return new CountingResult(smallMoney, time);
     }
 }
