@@ -1,3 +1,6 @@
+import Persons.*;
+import object.*;
+
 public class Main {
     public static void main(String[] args) {
         Miga miga = new Miga();
