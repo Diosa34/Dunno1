@@ -1,6 +1,4 @@
-package Persons;
-
-import Persons.Character;
+package persons;
 
 public final class Julio extends Character {
     public Julio() {

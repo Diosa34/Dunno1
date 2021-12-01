@@ -1,4 +1,4 @@
-package Persons;
+package persons;
 
 public interface Sociable {
     default void handshake(Sociable other){

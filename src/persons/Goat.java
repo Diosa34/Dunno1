@@ -1,6 +1,4 @@
-package Persons;
-
-import Persons.Character;
+package persons;
 
 public final class Goat extends Character {
     public Goat() {

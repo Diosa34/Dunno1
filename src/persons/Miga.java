@@ -1,6 +1,4 @@
-package Persons;
-
-import Persons.Character;
+package persons;
 
 public final class Miga extends Character implements Caller, Sociable {
     private Place place = null;

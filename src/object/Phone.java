@@ -1,8 +1,8 @@
 package object;
 
-import Persons.Callable;
-import Persons.Caller;
-import Persons.Place;
+import persons.Callable;
+import persons.Caller;
+import persons.Place;
 
 import java.util.ArrayList;
 

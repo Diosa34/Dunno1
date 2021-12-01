@@ -1,4 +1,4 @@
-package Persons;
+package persons;
 
 public final class Photographer extends Character implements Callable {
 

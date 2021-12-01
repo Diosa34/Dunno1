@@ -1,4 +1,4 @@
-import Persons.*;
+import persons.*;
 import object.*;
 
 public class Main {
