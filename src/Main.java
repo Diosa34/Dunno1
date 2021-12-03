@@ -17,8 +17,9 @@ public class Main {
 
         System.out.println("Мига и покупатель пожимают руки.");
         miga.handshake(customer);
-        System.out.println(String.format("Уровень коммуникабельности Миги становится: %s", miga.getSociability()));
-        System.out.println(String.format("Уровень коммуникабельности Покупателя становится: %s", customer.getSociability()));
+//        System.out.println(String.format("Уровень коммуникабельности Миги становится: %s", miga.getSociability()));
+        System.out.println(miga.toString());
+        System.out.println(customer.toString());
 
         System.out.println("Мига спросил имя покупателя.");
         System.out.println(String.format("Покупатель ответил: %s", customer.getName()));

@@ -5,7 +5,7 @@ public final class Miga extends Character implements Caller, Sociable {
     private int sociability = 0;
 
     public Miga() {
-        super("Persons.Miga");
+        super("Мига");
     }
 
     public void moveTo(Place place){
@@ -24,5 +24,10 @@ public final class Miga extends Character implements Caller, Sociable {
     @Override
     public void setSociability(int n) {
         this.sociability = n;
+    }
+
+    @Override
+    public String toString() {
+        return "Герой " + this.getName() + " с уровнем коммуникабельности: " + this.getSociability();
     }
 }

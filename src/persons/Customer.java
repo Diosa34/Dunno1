@@ -11,7 +11,7 @@ public final class Customer extends Character implements Caller, Place, Sociable
 
 
     public Customer() {
-        super("Покупатель");
+        super("Седенький");
         this.bag = new Bag();
         for (int i = new Random().nextInt(10) + 5; i > 0; i--) {
             this.bag.add(Money.values()[new Random().nextInt(Money.values().length)]);
@@ -31,5 +31,10 @@ public final class Customer extends Character implements Caller, Place, Sociable
     @Override
     public void setSociability(int n) {
         this.sociability = n;
+    }
+
+    @Override
+    public String toString() {
+        return "Герой " + this.getName() + " с уровнем коммуникабельности: " + this.getSociability();
     }
 }
