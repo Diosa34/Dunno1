@@ -28,6 +28,6 @@ public final class Miga extends Character implements Caller, Sociable {
 
     @Override
     public String toString() {
-        return "Герой " + this.getName() + " с уровнем коммуникабельности: " + this.getSociability();
+        return String.format("Герой %s с уровнем коммуникабельности: %s", this.getName(), this.getSociability());
     }
 }

@@ -1,5 +1,6 @@
 import persons.*;
 import object.*;
+import persons.Character;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +12,15 @@ public class Main {
         Dunno dunno = new Dunno();
         Bag bag = new Bag();
         Julio julio = new Julio();
+        Goat goat = new Goat();
+
+
+        Population population = new Population(miga, customer, photographer, julio, goat);
+
+        System.out.println("Действующие лица: ");
+        for (Character person : population){
+            System.out.println(person.getName());
+        }
 
         System.out.println("Мига подходит к покупателю.");
         miga.moveTo(customer);

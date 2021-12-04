@@ -26,6 +26,7 @@ public final class Dunno extends Character {
         super("Незнайка");
     }
 
+
     public CountingResult count(Table table) {
         int smallMoney = 0;
         int time = 0;
