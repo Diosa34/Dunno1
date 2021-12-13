@@ -1,5 +1,10 @@
 package persons;
 
+import abstracts.Caller;
+import abstracts.Character;
+import abstracts.Place;
+import abstracts.Sociable;
+
 public final class Miga extends Character implements Caller, Sociable {
     private Place place = null;
     private int sociability = 0;

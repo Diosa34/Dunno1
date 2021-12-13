@@ -1,5 +1,6 @@
 package persons;
 
+import abstracts.Character;
 import object.Money;
 import object.Table;
 

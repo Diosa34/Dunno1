@@ -1,6 +1,6 @@
 import persons.*;
 import object.*;
-import persons.Character;
+import abstracts.Character;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +15,8 @@ public class Main {
         Goat goat = new Goat();
 
 
+
+
         Population population = new Population(miga, customer, photographer, julio, goat);
 
         System.out.println("Действующие лица: ");
@@ -27,7 +29,7 @@ public class Main {
 
         System.out.println("Мига и покупатель пожимают руки.");
         miga.handshake(customer);
-//        System.out.println(String.format("Уровень коммуникабельности Миги становится: %s", miga.getSociability()));
+
         System.out.println(miga.toString());
         System.out.println(customer.toString());
 

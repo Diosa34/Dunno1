@@ -1,5 +1,9 @@
 package persons;
 
+import abstracts.Caller;
+import abstracts.Character;
+import abstracts.Place;
+import abstracts.Sociable;
 import object.Bag;
 import object.Money;
 
