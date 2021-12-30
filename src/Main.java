@@ -1,6 +1,13 @@
+import abstracts.Direction;
+import abstracts.Size;
+import korotishkies.Korotishka;
+import korotishkies.KorotishkaGroup;
+import abstracts.State;
 import persons.*;
 import object.*;
 import abstracts.Character;
+
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,11 +20,36 @@ public class Main {
         Bag bag = new Bag();
         Julio julio = new Julio();
         Goat goat = new Goat();
-
-
-
-
         Population population = new Population(miga, customer, photographer, julio, goat);
+
+        Promotion promotion = new Promotion(dunno);
+
+        WatermelonBody watermelonbody = new WatermelonBody();
+        WatermelonTop watermelontop = new WatermelonTop();
+
+        class KorotishkaUnic extends Korotishka{
+            public KorotishkaUnic(KorotishkaGroup group) {
+                super(group);
+            }
+        }
+
+        KorotishkaGroup downGroup = new KorotishkaGroup(watermelonbody, State.CLIMB) {
+            @Override
+            protected void fill() {
+                for (int i = new Random().nextInt(10) + 5; i > 0; i--) {
+                    this.addKorotishkies(new KorotishkaUnic(this));
+                }
+            }
+        };
+
+        KorotishkaGroup topGroup = new KorotishkaGroup(watermelontop, State.DANCE) {
+            @Override
+            protected void fill() {
+                for (int i = 5; i > 0; i--) {
+                    this.addKorotishkies(new KorotishkaUnic(this));
+                }
+            }
+        };
 
         System.out.println("Действующие лица: ");
         for (Character person : population){
@@ -64,8 +96,35 @@ public class Main {
                 System.out.println("Никак не могут справиться, потому что слишком много мелких монет.");
             }
         }
-        else {
-            System.out.println("Монетки посчитаны.");
+        System.out.println("Монетки посчитаны.");
+
+        System.out.println(String.format("%s велел Незнайке выдать покупителю акцию.", julio.getName()));
+        customer.addPromotion(promotion);
+
+        if (!customer.isEmptyPromotions()){
+            customer.setState(State.CAREFULNESS);
+            System.out.println(String.format("Бережно взяв акцию в руки," +
+                    " %s с интересом принялся разглядывать её", customer.getName()));
         }
+
+        System.out.println("На одной стороне акции был изображён огромнейший арбуз, окружённый крошечными коротышками.");
+
+        System.out.println(String.format("%s из них пытались вскарабкаться на арбуз, приставив к нему деревянную лестницу.", downGroup.getCount()));
+        System.out.println(String.format("%s коротышек уже залезли на вершину арбуза и стали %s там, взявшись за руки.",
+                topGroup.getCount(), topGroup.getState()));
+
+        System.out.println(String.format("%s зрели на грядке гигантские огурцы.", promotion.getFrontSide().getCucumber().getDirection()));
+        System.out.println(String.format("Каждый огурец величиной, как %s.", promotion.getFrontSide().getCucumber().getSize()));
+
+        System.out.println(String.format("%s виднелись %s деревенские домики, %s," +
+                " словно строевой лес, возвышались колосья %s земной пшеницы.", promotion.getFrontSide().getHouses().getDirection(),
+                promotion.getFrontSide().getHouses().getSize(), promotion.getFrontSide().getWheat().getDirection(),
+                promotion.getFrontSide().getWheat().getSize()));
+
+        System.out.println(String.format("На обратной стороне акции имелось изображение космической ракеты и %s в космическом скафандре.",
+                dunno.getName()));
+
+        System.out.println(String.format("Тут же было напечатано сообщение, содержащее %s.",
+                promotion.getBackSide().getInscription().getContent()));
     }
 }

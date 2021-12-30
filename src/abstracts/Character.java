@@ -2,7 +2,6 @@ package abstracts;
 
 public abstract class Character {
     private final String name;
-//    private Place where = null;
 
     public Character(String name){
         this.name = name;
@@ -11,10 +10,6 @@ public abstract class Character {
     public String getName(){
         return this.name;
     }
-
-//    public Place getWhere(){return this.where;}
-//
-//    public void setWhere(Place place){this.where = place;}
 
     @Override
     public String toString(){
